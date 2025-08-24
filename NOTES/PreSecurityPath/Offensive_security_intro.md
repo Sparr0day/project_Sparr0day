@@ -6,7 +6,7 @@ Le but de ce chapitre est de ce mettre dans la peau d'un hacker et d'attquer nos
 ## 2. Starting the labs
 Ici TryHackMe mets à notre disposition une machine virtuelle pour s'entrainer.
 Dans cette VM, c'est une fausse application bancaire nommée "FakeBank".
-# 2.1
+# 2.1 Accèdez à la suite
 Pour la première étape : THM nous demande de renseigné le numéro de compte de la fausse application bancaire.
 
 ## 3. Your first hack
@@ -19,6 +19,24 @@ Le moyen le simple pour tenter d'hacker une application est de trouver des fonct
 Parfois les applications rendent accessible des fonctionnalités sensibles au utilisateur via des URLs "secrètes".
 Si nous arrivons a trouver de tel URL, nous pourrons alors faire des choses que les utilisateurs lambda ne sont pas censé pouvoir faire.
 
-Pour trouver ces URLs, nous allons utilisé un outils nommé "dirb". Cet outil utilise une approche brute force.
-To find hidden URLs, we will use a tool called dirb. This tool uses a brute-force approach, by taking a list of potential page names and testing one by one if they exist in your website. This approach works because people use predictable names a lot of times.
+Pour trouver ces URLs, nous allons utilisé un outils nommé "dirb". Cet outil utilise une approche brute force. En effet, il prend une liste de potentiel nom de page et les tests une par une pour voir si elles existent sur le site web.
+Cet approche fonctionne car les gens utilisents des noms de pages facile a deviner (souvent les mêmes).
+# 3.1 Début de l'exercice
+Sur la VM proposé par THM, nous lançons un terminal.
+Dans ce terminal nous allons utilisé l'outil "dirb" :
+$ dirb *url du site* (ici http://fakebank.thm)
 
+dirb lance le process et nous donne plusieurs informations :
+
+- L'url sur laquelle on test
+- Le dictionnaires(liste) de mots qu'on utilise pour bruteforce les routes.
+
+dirb process dans le test des différentes routes et nous sorts deux routes accessible : 
+http://fakebank.thm/bank-deposit                    
+http://fakebank.thm/images
+
+On va donc tester ces routes en commençant par la "/bank-deposit" qui semble plus importantes pour detourner l'accès.
+
+BINGO : 
+La route nous emmènent sur une page "STAFF ONLY" qui permet de créditer autant d'argent qu'on veut sur n'importe quel compte.
+Ici il nous reste juste a renseigné notre numéro de compte et l'argent que nous voulons créditez dessus.
