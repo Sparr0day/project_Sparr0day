@@ -55,3 +55,33 @@ Pour résumer :
 - Un réseau public = l’ensemble des petits réseaux connectés entre eux = Internet.
 
 Les appareils qui se connectent à un réseau utilisent des étiquettes (identifiants) pour se reconnaître et communiquer.
+
+## 2 Savoir identifier les appareils sur un Réseau
+Pour identifier des appareils, il y a deux moyens d'identification, dont un seul reste "identique" (comme les empreinte digital) :
+- L'adresse IP.
+- L'adresse MAC (qui s'apparente à un numéro de série).
+
+# 2.1 Les adresses IP
+En résumé, une adresse IP (Internet Protocol) peut être utilisée pour identifier un hôte sur un réseau pendant une certaine période, après quoi cette adresse IP peut être attribuée à un autre appareil. 
+
+Premièrement, nous allons décomposé précisement ce dont une adresse IP est constitué :
+[==== Voir Image "IP-Adress.png" ====]
+
+Une adresse IP est une suite de nombre divisé en 4 octets.
+Ce nombre est calculé grâce à l'adressage IP et sous-réseaux (subnetting).
+Les adresses IP peuvent changer d'un appareil à l'autre et ne peuvent pas existais deux fois en même temps sur le même réseaux. 
+
+Les adresses IP suivent un ensemble de règles appelées protocoles. Ces protocoles sont la colonne vertébrale du réseau et obligent les appareils à communiquer dans un même langage.
+Un appareil peut être sur un réseau privé ou public, et selon le cas il aura une adresse IP publique ou privée.
+
+Une adresse publique sert à identifier l’appareil sur Internet.
+
+Une adresse privée sert à identifier un appareil parmi d’autres sur un réseau local.
+
+Exemple (tableau) :
+
+Nom de l’appareil :   	Adresse IP :	      Type d’adresse :
+DESKTOP-KJE57FD	        192.168.1.77	        Privée
+DESKTOP-KJE57FD	        86.157.52.21	        Publique
+CMNatic-PC	            192.168.1.74	        Privée
+CMNatic-PC	            86.157.52.21	        Publique
