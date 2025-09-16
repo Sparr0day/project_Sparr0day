@@ -148,3 +148,26 @@ Mise en situation :  Tu remarqueras que le routeur n’autorise pas les paquets 
 Après avoir copié l'adresse MAC, nous avons bien un accès "payant" et ceci s'affiche : 
 
 THM{YOU_GOT_ON_TRYHACKME}
+
+## 3 Ping (ICMP)
+
+Ping est l’un des outils réseau les plus fondamentaux. 
+Ping utilise des paquets ICMP (Internet Control Message Protocol) pour déterminer les performances d’une connexion entre deux appareils — par exemple, pour vérifier si la connexion existe ou si elle est fiable.
+
+Le temps nécessaire aux paquets ICMP pour voyager entre les appareils est mesuré par ping, comme on peut le voir dans la capture d’écran ci-dessous. Cette mesure est réalisée à l’aide du paquet “echo” ICMP (envoyé) et de la réponse “echo reply” ICMP (reçue) de l’appareil cible.
+
+Les pings peuvent être effectués aussi bien vers des appareils sur un réseau local (comme ton réseau domestique) que vers des ressources accessibles sur Internet (par exemple des sites web). Cet outil est très simple d’utilisation et est installé par défaut sur la plupart des systèmes d’exploitation (Linux, Windows, etc.).
+
+La syntaxe d’un ping basique est :
+
+$ ping adresse_IP  
+ou  
+$ ping nom_du_site_web
+
+Voyons un exemple dans la capture d’écran ci-dessous.
+
+======================================
+[==== Voir Image "ping1.png" ====]
+======================================
+
+Ici nous pingons un appareil qui a l’adresse privée 192.168.1.254. Ping nous informe que nous avons envoyé six paquets ICMP, tous reçus, avec un temps moyen de 4,16 millisecondes.
