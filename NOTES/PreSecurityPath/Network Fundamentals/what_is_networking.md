@@ -65,8 +65,9 @@ Pour identifier des appareils, il y a deux moyens d'identification, dont un seul
 En résumé, une adresse IP (Internet Protocol) peut être utilisée pour identifier un hôte sur un réseau pendant une certaine période, après quoi cette adresse IP peut être attribuée à un autre appareil. 
 
 Premièrement, nous allons décomposé précisement ce dont une adresse IP est constitué :
+======================================
 [==== Voir Image "IP-Adress.png" ====]
-
+======================================
 Une adresse IP est une suite de nombre divisé en 4 octets.
 Ce nombre est calculé grâce à l'adressage IP et sous-réseaux (subnetting).
 Les adresses IP peuvent changer d'un appareil à l'autre et ne peuvent pas existais deux fois en même temps sur le même réseaux. 
@@ -85,3 +86,65 @@ DESKTOP-KJE57FD	        192.168.1.77	        Privée
 DESKTOP-KJE57FD	        86.157.52.21	        Publique
 CMNatic-PC	            192.168.1.74	        Privée
 CMNatic-PC	            86.157.52.21	        Publique
+
+======================================
+[==== Voir Image "IP-privee.png" ====]
+======================================
+
+Ces deux appareils ci dessus pourront utiliser leurs adresses IP privées pour communiquer entre eux. Cependant, toutes les données envoyées vers Internet par l’un ou l’autre de ces appareils seront identifiées par la même adresse IP publique (86.157.52.21). Les adresses IP publiques sont fournies par votre fournisseur d’accès à Internet (ou FAI ou ISP en anglais) moyennant un abonnement mensuel (vot).
+
+======================================
+[==== Voir Image "FAI/ISP.png" ====]
+======================================
+
+À mesure que de plus en plus d’appareils se connectent, il devient de plus en plus difficile d’obtenir une adresse publique qui ne soit pas déjà utilisée. Par exemple, Cisco, un géant de l’industrie du réseau, estimait qu’il y aurait environ 50 milliards d’appareils connectés à Internet d’ici la fin de 2021.
+
+C’est là qu’entrent en jeu les versions d’adresses IP. Jusqu’à présent, nous n’avons parlé que d’une seule version du protocole Internet, appelée IPv4, qui utilise un système de numérotation de 2^32 adresses IP (soit 4,29 milliards) — vous comprenez donc pourquoi il y a une telle pénurie !
+
+IPv6 est une nouvelle version du protocole d’adressage Internet, créée pour résoudre ce problème. Même si elle peut sembler plus complexe, elle offre plusieurs avantages :
+
+Elle prend en charge jusqu’à 2^128 adresses IP (plus de 340 trillions), ce qui règle les problèmes rencontrés avec IPv4.
+
+Elle est plus efficace grâce à de nouvelles méthodes.
+
+La capture d’écran ci-dessous compare une adresse IPv6 et une adresse IPv4.
+
+======================================
+[==== Voir Image "IPv6.png" ====]
+======================================
+
+Adresses MAC
+
+Les appareils d’un réseau possèdent tous une interface réseau physique, qui est une puce électronique intégrée à la carte mère de l’appareil.
+Cette interface réseau reçoit, dès l’usine où elle a été fabriquée, une adresse unique appelée adresse MAC (Media Access Control).
+
+L’adresse MAC est un nombre hexadécimal à douze caractères (un système de numérotation en base 16 utilisé en informatique pour représenter des nombres), regroupé par deux caractères et séparés par des deux-points. Ces deux-points servent simplement de séparateurs. Par exemple : a4:c3:f0:85:ac:2d.
+
+- Les six premiers caractères identifient l’entreprise qui a fabriqué l’interface réseau.
+
+- Les six derniers caractères correspondent à un numéro unique propre à cette interface.
+
+======================================
+[==== Voir Image "MAC-Adress.png" ====]
+======================================
+
+Détournement d’adresses MAC (MAC spoofing)
+
+Cependant, une chose intéressante à propos des adresses MAC est qu’elles peuvent être falsifiées ou « spoofées » dans un processus appelé spoofing.
+
+Ce spoofing se produit lorsqu’un appareil connecté au réseau se fait passer pour un autre en utilisant son adresse MAC. Quand cela arrive, ça peut casser des dispositifs de sécurité mal conçus qui partent du principe que les appareils présents sur le réseau sont dignes de confiance.
+
+Prends l’exemple suivant : un pare-feu est configuré pour autoriser toute communication vers et depuis l’adresse MAC de l’administrateur. Si un appareil se met à imiter ou « spoof » cette adresse MAC, le pare-feu croira recevoir des communications de l’administrateur alors que ce n’est pas le cas.
+
+Des lieux comme les cafés, les coffee-shops ou les hôtels utilisent souvent le contrôle par adresse MAC pour leurs réseaux Wi-Fi « invité » ou « public ».
+
+Cette configuration peut permettre d’offrir des services différenciés, par exemple une connexion plus rapide moyennant un paiement si tu acceptes de payer par appareil.
+
+Pratique :
+THM nous propose un lab qui nous mets en situations justement un wifi qui est controle par adresse MAC (type Hotel) où il faut payer pour le service.
+
+Mise en situation :  Tu remarqueras que le routeur n’autorise pas les paquets de Bob (en bleu) vers le site TryHackMe et les met à la poubelle, tandis que les paquets d’Alice (en vert) passent bien parce qu’elle a payé pour le Wi-Fi. Essaie de changer l’adresse MAC de Bob pour qu’elle soit la même que celle d’Alice et vois ce qui se passe.
+
+Après avoir copié l'adresse MAC, nous avons bien un accès "payant" et ceci s'affiche : 
+
+THM{YOU_GOT_ON_TRYHACKME}
