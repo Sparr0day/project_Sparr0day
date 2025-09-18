@@ -14,7 +14,7 @@ masque de sous réseau contient 32 bits et va de 0 à 255 et peut être utilisé
 - Adresse Hôte = Identifier un appareil dans le sous-réseau. (192.168.1.100)
 - Passerelle par défault = Adresse spéciale assignée à un appareil capable d’envoyer des données vers un autre réseau. (192.168.1.254)
 
-ARP = Address Resolution Protocol (protocole de résolution d’adresses)
+ARP = Address Resolution Protocol (protocole de résolution d’adresses) (utilisé pour trouver a qui envoyé les données)
 Deux différents packets : 
 - ARP Request (requête ARP) = Quelle est l’adresse MAC qui correspond à cette adresse IP ?
 - ARP Reply (réponse ARP) = Adresse Mac renvoyé par le seul appareil correspondant à l'adresse IP.
