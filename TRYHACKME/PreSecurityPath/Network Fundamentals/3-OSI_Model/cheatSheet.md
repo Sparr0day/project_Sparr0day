@@ -12,6 +12,7 @@ Carte réseau = possède l'adresse MAC
 - 3.Réseaux
     Determine le chemin le plus optimal pour envoyé les paquets données.
     A cette couche tout ce fait via adresse IP.
+    Deux protocoles utilisés : 
     - OSPF (Open Shortest Path First)
     - RIP (Routing Information Protocol).
 - 4.Transport 
