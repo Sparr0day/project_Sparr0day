@@ -1,1 +1,0 @@
-LAN = Local Area Network
