@@ -117,3 +117,33 @@ ce qui signifie que la moitié de l’image est manquante.
 ======================================
 [==== Voir Image "UDP.png" ====]
 =====================================
+
+# 1.5 Couche Session 
+
+Une fois que les données ont été correctement traduites ou formatées par la couche de présentation (couche 6), la couche de session (couche 5) commence à créer et à maintenir la connexion avec l’autre ordinateur auquel les données sont destinées. Lorsqu’une connexion est établie, une session est créée. Tant que cette connexion reste active, la session l’est également.
+
+La couche de session est aussi responsable de fermer la connexion lorsqu’elle n’a pas été utilisée pendant un certain temps ou si elle est perdue.
+De plus, une session peut contenir des points de contrôle (“checkpoints”) qui permettent, en cas de perte de données, de ne renvoyer que les parties les plus récentes. Cela permet d’économiser de la bande passante.
+
+Il est important de noter que les sessions sont uniques — ce qui signifie que les données ne peuvent pas circuler entre différentes sessions, mais uniquement à l’intérieur de la session à laquelle elles appartiennent.
+
+# 1.6 Couche Présentation
+
+La couche 6 appelée couche de présentation, est celle où la standardisation commence à se mettre en place. 
+En effet, même si les développeurs peuvent créer différents logiciels 
+— par exemple des clients de messagerie distincts — 
+les données doivent tout de même être traitées de la même manière, quel que soit le fonctionnement du logiciel.
+
+Cette couche agit comme un traducteur des données vers et depuis la couche application (couche 7).
+L’ordinateur récepteur doit être capable de comprendre les données envoyées par un autre ordinateur, même si elles ont été produites dans un format différent. 
+Par exemple, lorsque vous envoyez un e-mail, le destinataire peut utiliser un autre client de messagerie que le vôtre, mais le contenu du message doit tout de même s’afficher de la même façon.
+
+Des mécanismes de sécurité, tels que le chiffrement des données (comme le protocole HTTPS lors de la visite d’un site sécurisé), sont également mis en œuvre à ce niveau.
+
+# 1.7 Couche Application
+C’est à ce niveau que se trouvent les protocoles et les règles déterminant la manière dont l’utilisateur interagit avec les données envoyées ou reçues.
+
+Les applications courantes telles que les clients de messagerie, les navigateurs web, ou les logiciels de transfert de fichiers comme FileZilla offrent une interface graphique conviviale (GUI)
+permettant aux utilisateurs d’interagir facilement avec les données transmises ou reçues.
+
+Parmi les autres protocoles utilisés à cette couche, on trouve le DNS (Domain Name System), qui permet de traduire les adresses de sites web en adresses IP.
